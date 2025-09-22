@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham Kumar - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F3F4F6;
+            color: #1F2937;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .text-black {
+            color: #1F2937;
+        }
+
+        .border-gray {
+            border-color: #D1D5DB;
+        }
+
+        .nav-link:hover {
+            color: #6EE7B7;
+            transition: color 0.3s ease;
+        }
+
+        .project-card {
+            border: 1px solid #D1D5DB;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-black">
+
+    <!-- Header & Hero Section -->
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="text-3xl font-bold">SK</div>
+            <div class="space-x-8 hidden md:flex">
+                <a href="projects.html" class="nav-link text-lg">Projects</a>
+                <a href="about.html" class="nav-link text-lg">About</a>
+                <a href="contact.html" class="nav-link text-lg">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4">
+        <!-- About Section -->
+        <section id="about" class="py-20 animate-fade-in-up" style="animation-delay: 0.5s;">
+            <h2 class="text-4xl font-semibold text-black mb-8">About Me</h2>
+            <div class="border-t border-gray w-full mb-8"></div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        I'm an aspiring AI Engineer with a strong foundation in Python, JAVA, and C. My skill set
+                        includes developing and deploying AI-powered solutions, with a specialization in computer vision
+                        and natural language processing. I thrive on finding quick solutions to complex problems and
+                        enjoy both independent projects and team collaborations.
+                    </p>
+                    <p class="mt-6 text-gray-500">
+                        **My skill set lies in:**
+                    <div class="mt-2 space-x-4 flex flex-wrap">
+                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Django</span>
+                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Azure AI</span>
+                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Git</span>
+                    </div>
+                    </p>
+                </div>
+                <div class="flex justify-center md:justify-end">
+                    <!-- Placeholder for image, can be replaced later -->
+                    <div class="w-64 h-64 bg-gray-300 rounded-lg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Microsoft Student Ambassadors Section -->
+        <section id="msa" class="py-20 animate-fade-in-up" style="animation-delay: 0.7s;">
+            <h2 class="text-4xl font-semibold text-black mb-8">Microsoft Student Ambassadors</h2>
+            <div class="border-t border-gray w-full mb-8"></div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="w-full h-48 bg-gray-300 rounded-lg"></div>
+                        <div class="w-full h-48 bg-gray-300 rounded-lg"></div>
+                        <div class="w-full h-48 bg-gray-300 rounded-lg"></div>
+                        <div class="w-full h-48 bg-gray-300 rounded-lg"></div>
+                        <div class="w-full h-48 bg-gray-300 rounded-lg"></div>
+                        <div class="w-full h-48 bg-gray-300 rounded-lg"></div>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        As one of the founding members of the **Microsoft Student Ambassadors Moderator Program**, I've
+                        had the privilege of contributing to a global community of aspiring tech enthusiasts. My
+                        responsibilities include training new moderators, advocating for technology, and guiding
+                        thousands of students to achieve their goals. This role has been an incredible opportunity to
+                        assist and empower the next generation of innovators.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 animate-fade-in-up" style="animation-delay: 0.9s;">
+            <h2 class="text-4xl font-semibold text-black mb-8">Certifications</h2>
+            <div class="border-t border-gray w-full mb-8"></div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold text-black mb-4">Certifications</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>Microsoft Certified: Azure AI Associate</li>
+                        <li>AWS ML Fundamentals (AWS AI & ML Scholarship)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 animate-fade-in-up" style="animation-delay: 1.1s;">
+            <h2 class="text-4xl font-semibold text-black mb-8">Publications</h2>
+            <div class="border-t border-gray w-full mb-8"></div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <ul class="space-y-6 text-gray-700">
+                        <li>
+                            <p class="font-medium">Combating Digitally Altered Images: Deepfake Detection</p>
+                            <p class="text-sm text-gray-500 mt-1">DOI: 10.48550/arXiv.2508:16975 (ArXiV)</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Supervised Multilabel Image Classification Using ResNet with
+                                Probabilistic Reasoning</p>
+                            <p class="text-sm text-gray-500 mt-1">IEEE ICCCNT 2025, IIT Indore (In Press: ResearchGate)
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-fade-in-up').forEach(element => {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>

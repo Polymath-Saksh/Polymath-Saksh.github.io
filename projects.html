@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham Kumar - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F3F4F6;
+            color: #1F2937;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .text-black {
+            color: #1F2937;
+        }
+
+        .border-gray {
+            border-color: #D1D5DB;
+        }
+
+        .nav-link:hover {
+            color: #6EE7B7;
+            transition: color 0.3s ease;
+        }
+
+        .project-card {
+            border: 1px solid #D1D5DB;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-black">
+
+    <!-- Header & Hero Section -->
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="text-3xl font-bold">SK</div>
+            <div class="space-x-8 hidden md:flex">
+                <a href="projects.html" class="nav-link text-lg">Projects</a>
+                <a href="about.html" class="nav-link text-lg">About</a>
+                <a href="contact.html" class="nav-link text-lg">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4">
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 animate-fade-in-up" style="animation-delay: 0.5s;">
+            <h2 class="text-4xl font-semibold text-black mb-8">Projects</h2>
+            <div class="border-t border-gray w-full mb-8"></div>
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <p class="text-center text-gray-500 col-span-full">Loading projects from GitHub...</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to fetch and display GitHub projects
+            async function fetchGitHubProjects() {
+                const projectsContainer = document.getElementById('projects-container');
+                const username = 'Polymath-Saksh';
+                const githubApiUrl = `https://api.github.com/users/${username}/repos`;
+
+                try {
+                    const response = await fetch(githubApiUrl);
+                    if (!response.ok) {
+                        throw new Error(`GitHub API returned status: ${response.status}`);
+                    }
+                    const repos = await response.json();
+
+                    projectsContainer.innerHTML = '';
+
+                    const filteredRepos = repos.filter(repo => !repo.fork && repo.name !== `${username}.github.io`);
+
+                    if (filteredRepos.length === 0) {
+                        projectsContainer.innerHTML = '<p class="text-center text-gray-500 col-span-full">No public projects found on GitHub.</p>';
+                        return;
+                    }
+
+                    filteredRepos.forEach(repo => {
+                        const projectCard = document.createElement('a');
+                        projectCard.href = repo.html_url;
+                        projectCard.target = '_blank';
+                        projectCard.className = 'project-card p-6 rounded-xl shadow-sm block animate-fade-in-up';
+                        projectCard.style.animationDelay = `${Math.random() * 0.5 + 0.5}s`;
+                        projectCard.innerHTML = `
+                            <h3 class="text-lg font-medium">${repo.name}</h3>
+                            <p class="mt-2 text-sm text-gray-500">
+                                ${repo.description || 'No description provided.'}
+                            </p>
+                            <p class="mt-2 text-xs text-gray-400">
+                                Language: ${repo.language || 'N/A'}
+                            </p>
+                        `;
+                        projectsContainer.appendChild(projectCard);
+                    });
+
+                } catch (error) {
+                    console.error('Failed to fetch GitHub projects:', error);
+                    projectsContainer.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load projects. Please check the GitHub username.</p>`;
+                }
+            }
+
+            // Scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-fade-in-up').forEach(element => {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+            fetchGitHubProjects();
+        });
+    </script>
+</body>
+
+</html>
