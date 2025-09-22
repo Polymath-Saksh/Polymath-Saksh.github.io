@@ -95,11 +95,14 @@
     <!-- Header & Nav -->
     <header class="container mx-auto px-4 py-8">
         <nav class="flex justify-between items-center animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="text-3xl font-bold">SK</div>
+            <div class="text-3xl font-bold">
+                <a href="index.html" class="no-underline">SK</a>
+            </div>
             <div class="space-x-8 hidden md:flex">
-                <a href="projects.html" class="nav-link text-lg">Projects</a>
-                <a href="about.html" class="nav-link text-lg">About</a>
-                <a href="contact.html" class="nav-link text-lg">Contact</a>
+                <a href="index.html" class="nav-link text-lg">Home</a>
+                <a href="projects/" class="nav-link text-lg">Projects</a>
+                <a href="about/" class="nav-link text-lg">About</a>
+                <a href="contact/" class="nav-link text-lg">Contact</a>
             </div>
         </nav>
     </header>
@@ -114,12 +117,12 @@
                     </h1>
                     <p class="mt-4 text-xl md:text-2xl text-gray-600">
                         A prospective CS Engineer specializing in Artificial Intelligence and a certified Azure & Azure
-                        AI Engineer. Available for collaborations.
+                        AI Engineer. </p>
                     </p>
                 </div>
                 <div class="flex justify-center md:justify-end">
                     <!-- Placeholder for image -->
-                    <div class="w-64 h-64 bg-gray-300 rounded-lg"></div>
+                    <img src="assets/Saksh_IC.jpg" alt="Saksham Kumar" class="w-64 h-64 rounded-lg">
                 </div>
             </div>
         </section>
@@ -139,83 +142,56 @@
             <div class="border-t border-gray w-full mb-8"></div>
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <p class="text-lg leading-relaxed text-gray-700">
+                    <p class="text-lg leading-relaxed text-gray-700" id="about-me">
                         I'm an aspiring AI Engineer with a strong foundation in Python, JAVA, and C. My skill set
                         includes developing and deploying AI-powered solutions, with a specialization in computer vision
                         and natural language processing. I thrive on finding quick solutions to complex problems and
                         enjoy both independent projects and team collaborations.
                     </p>
-                    <div class="skill-reel-wrapper mt-6">
-                        <div class="skill-reel px-8">
-                            <div class="skill-reel-item space-x-4">
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Python</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Django</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">React</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">TensorFlow</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Azure AI</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Git</span>
-                                <!-- Duplicated for seamless loop -->
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Python</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Django</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">React</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">TensorFlow</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Azure AI</span>
-                                <span class="px-3 py-1 bg-gray-200 rounded-full text-sm">Git</span>
-                            </div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Specialization:</h3>
+                    <div class="space-y-2">
+                        <div class="py-4 border-b border-gray-300">
+                            <span class="font-medium">1. AI Engineering & Machine Learning</span>
+                        </div>
+                        <div class="py-4 border-b border-gray-300">
+                            <span class="font-medium">2. Full-Stack Development</span>
+                        </div>
+                        <div class="py-4 border-b border-gray-300">
+                            <span class="font-medium">3. Technical Consulting</span>
                         </div>
                     </div>
                 </div>
-                <div class="space-y-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Your one stop shop for:</h3>
-                    <div class="space-y-2">
-                        <div class="py-4 border-b border-gray-300">
-                            <div class="flex justify-between items-center cursor-pointer">
-                                <span class="font-medium">1. AI Engineering & Machine Learning</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg></span>
-                            </div>
-                            <div class="mt-2 text-sm text-gray-600 hidden">
-                                I offer services in developing, training, and deploying cutting-edge AI and Machine
-                                Learning models. This includes building custom solutions for computer vision, natural
-                                language processing, and data analysis.
-                            </div>
-                        </div>
-                        <div class="py-4 border-b border-gray-300">
-                            <div class="flex justify-between items-center cursor-pointer">
-                                <span class="font-medium">2. Full-Stack Development</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg></span>
-                            </div>
-                            <div class="mt-2 text-sm text-gray-600 hidden">
-                                I provide end-to-end web development services using frameworks like Django and React.
-                                From front-end user interfaces to back-end server logic and database management, I build
-                                robust and scalable web applications.
-                            </div>
-                        </div>
-                        <div class="py-4 border-b border-gray-300">
-                            <div class="flex justify-between items-center cursor-pointer">
-                                <span class="font-medium">3. Technical Consulting</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg></span>
-                            </div>
-                            <div class="mt-2 text-sm text-gray-600 hidden">
-                                As a certified Azure & Azure AI Engineer, I offer expert advice on cloud infrastructure,
-                                solution architecture, and implementing AI services. I can help you leverage the power
-                                of the cloud to achieve your technical goals.
-                            </div>
-                        </div>
+            </div>
+
+            <!-- Skill Reel Section -->
+            <div class="skill-reel-wrapper mt-8">
+                <div class="skill-reel px-8">
+                    <div class="skill-reel-item space-x-4">
+                        <span class="px-3 py-1 text-base">PYTHON</span>
+                        <span class="px-3 py-1 text-base">C</span>
+                        <span class="px-3 py-1 text-base">JAVA</span>
+                        <span class="px-3 py-1 text-base">SQL</span>
+                        <span class="px-3 py-1 text-base">DJANGO</span>
+                        <span class="px-3 py-1 text-base">TENSORFLOW</span>
+                        <span class="px-3 py-1 text-base">OPENCV</span>
+                        <span class="px-3 py-1 text-base">AI</span>
+                        <span class="px-3 py-1 text-base">AZURE</span>
+                        <span class="px-3 py-1 text-base">AWS</span>
+                        <span class="px-3 py-1 text-base">RESEARCH</span>
+                        <!-- Duplicated for seamless loop -->
+                        <span class="px-3 py-1 text-base">PYTHON</span>
+                        <span class="px-3 py-1 text-base">C</span>
+                        <span class="px-3 py-1 text-base">JAVA</span>
+                        <span class="px-3 py-1 text-base">SQL</span>
+                        <span class="px-3 py-1 text-base">DJANGO</span>
+                        <span class="px-3 py-1 text-base">TENSORFLOW</span>
+                        <span class="px-3 py-1 text-base">OPENCV</span>
+                        <span class="px-3 py-1 text-base">AI</span>
+                        <span class="px-3 py-1 text-base">AZURE</span>
+                        <span class="px-3 py-1 text-base">AWS</span>
+                        <span class="px-3 py-1 text-base">RESEARCH</span>
                     </div>
                 </div>
             </div>
