@@ -263,7 +263,7 @@
             async function fetchGitHubProjects() {
                 const projectsContainer = document.getElementById('projects-container');
                 const username = 'Polymath-Saksh';
-                const githubApiUrl = `https://api.github.com/users/${username}/repos`;
+                const githubApiUrl = `https://api.github.com/users/${username}/repos?sort=updated`;
 
                 try {
                     const response = await fetch(githubApiUrl);
@@ -274,7 +274,7 @@
 
                     projectsContainer.innerHTML = '';
 
-                    const filteredRepos = repos.filter(repo => !repo.fork && repo.name !== `${username}.github.io`);
+                    const filteredRepos = repos.filter(repo => !repo.fork && repo.name !== `${username}.github.io`).slice(0, 6);
 
                     if (filteredRepos.length === 0) {
                         projectsContainer.innerHTML = '<p class="text-center text-gray-500 col-span-full">No public projects found on GitHub.</p>';
@@ -282,19 +282,18 @@
                     }
 
                     filteredRepos.forEach(repo => {
-                        const projectCard = document.createElement('a');
-                        projectCard.href = repo.html_url;
-                        projectCard.target = '_blank';
-                        projectCard.className = 'project-card p-6 rounded-xl shadow-sm block animate-fade-in-up';
-                        projectCard.style.animationDelay = `${Math.random() * 0.5 + 0.5}s`;
+                        const camelCaseName = repo.name
+                            .split('-')
+                            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                            .join('');
+
+                        const projectCard = document.createElement('div');
+                        projectCard.className = 'project-card p-6 rounded-xl shadow-md bg-white hover:shadow-lg transition-transform transform hover:-translate-y-1';
                         projectCard.innerHTML = `
-                            <h3 class="text-lg font-medium">${repo.name}</h3>
-                            <p class="mt-2 text-sm text-gray-500">
-                                ${repo.description || 'No description provided.'}
-                            </p>
-                            <p class="mt-2 text-xs text-gray-400">
-                                Language: ${repo.language || 'N/A'}
-                            </p>
+                            <h3 class="text-lg font-semibold text-black">${camelCaseName}</h3>
+                            <p class="mt-2 text-sm text-gray-600">${repo.description || ''}</p>
+                            <p class="mt-2 text-xs text-gray-500">Language: ${repo.language || 'Markdown'}</p>
+                            <a href="${repo.html_url}" target="_blank" class="mt-4 inline-block text-sm text-blue-500 hover:underline">View Repository</a>
                         `;
                         projectsContainer.appendChild(projectCard);
                     });
@@ -327,24 +326,6 @@
                 observer.observe(element);
             });
             fetchGitHubProjects();
-
-            // Accordion functionality for services
-            const serviceItems = document.querySelectorAll('#about .cursor-pointer');
-            serviceItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const content = item.nextElementSibling;
-                    const svg = item.querySelector('svg');
-                    const isHidden = content.classList.contains('hidden');
-
-                    if (isHidden) {
-                        content.classList.remove('hidden');
-                        svg.style.transform = 'rotate(180deg)';
-                    } else {
-                        content.classList.add('hidden');
-                        svg.style.transform = 'rotate(0deg)';
-                    }
-                });
-            });
         });
     </script>
 </body>
