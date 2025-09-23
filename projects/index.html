@@ -70,17 +70,22 @@
 
 <body class="bg-gray-100 text-black">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('../header.html')
-                .then(response => response.text())
-                .then(data => document.body.insertAdjacentHTML('afterbegin', data));
-
-            fetch('../footer.html')
-                .then(response => response.text())
-                .then(data => document.body.insertAdjacentHTML('beforeend', data));
-        });
-    </script>
+    <!-- Header & Hero Section -->
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div>
+                <a href="index.html">
+                    <img src="../assets/signature.png" alt="Signature" class="h-10">
+                </a>
+            </div>
+            <div class="space-x-8 hidden md:flex">
+                <a href="../" class="nav-link text-lg">Home</a>
+                <a href="projects.html" class="nav-link text-lg">Projects</a>
+                <a href="../about/" class="nav-link text-lg">About</a>
+                <a href="../contact/" class="nav-link text-lg">Contact</a>
+            </div>
+        </nav>
+    </header>
 
     <main class="container mx-auto px-4">
         <!-- Projects Section -->
